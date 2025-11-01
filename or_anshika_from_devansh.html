@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Anshika — From Devansh</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(160deg, #ffdbe6, #fff5f8);
+      color: #2c2a2a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.2em;
+    }
+    p {
+      max-width: 500px;
+      font-size: 1em;
+      margin: 0.6em auto;
+      color: #444;
+    }
+    button {
+      background: #ff7aa2;
+      border: none;
+      border-radius: 20px;
+      color: #fff;
+      padding: 12px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255,122,162,0.3);
+    }
+    button:hover {
+      background: #ff5a8a;
+    }
+    #msg {
+      margin-top: 20px;
+      font-style: italic;
+      color: #4a3a3a;
+      min-height: 24px;
+    }
+    .heart {
+      font-size: 3em;
+      margin-bottom: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    .footer-note {
+      margin-top: 30px;
+      color: #ff7aa2;
+      font-style: italic;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="heart">💗</div>
+  <h1>Hey Anshika,</h1>
+  <p>You don’t have to be strong all the time.<br>Take a breath, rest your shoulders, and let this page hold you for a bit.</p>
+  <button id="hug">Send yourself a Devansh-style hug 🤗</button>
+  <div id="msg"></div>
+
+  <p class="footer-note">P.S. I missed you today too — more than I’ll admit out loud.</p>
+
+  <script>
+    const lines = [
+      "Sending you a quiet hug — the kind that says, ‘I’ve got you.’ 💞",
+      "You’re allowed to rest. You’re allowed to slow down. You’re still magic.",
+      "Here’s a warm squeeze from me to you — because you deserve comfort today.",
+      "Take a sip of water, close your eyes, and imagine my hand in yours.",
+      "You are not behind. You are exactly where you need to be, love.",
+      "Hug incoming… soft, steady, and just enough to make you smile.",
+      "Even when words don’t help, my warmth will. Always with you.",
+      "Missed you more than usual today. Hug stored, releasing now 🤍"
+    ];
+    const btn = document.getElementById('hug');
+    const msg = document.getElementById('msg');
+    btn.addEventListener('click', () => {
+      const text = lines[Math.floor(Math.random() * lines.length)];
+      msg.textContent = text;
+      btn.style.transform = 'scale(0.97)';
+      setTimeout(() => { btn.style.transform = 'scale(1)'; }, 120);
+    });
+  </script>
+</body>
+</html>
